@@ -21,13 +21,13 @@ class Xiangmu():
         self.end = 0         # 项目结束时间
 
         '''初始化预算'''
-        self.budget = caiwu.Caiwu(0)
+        self.budget = caiwu.budget(0)
 
         '''初始化变更，一般为支出'''
         self.payment = []
 
         '''初始化经费结余'''
-        self.rest = caiwu.Caiwu(1)
+        # self.rest = caiwu.Caiwu(1)
 
     def budgetChange(self,a=0,b=0,c=0,d=0,e=0,f=0,g=0,h=0,i=0,j=0,k=0,l=0,m=0,n=0,o=0,p=0,q=0,r=0):
         '''预算变更'''
