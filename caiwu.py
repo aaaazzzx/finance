@@ -4,17 +4,17 @@ import re
 class kemu():
     '''科目，用于保存最基础的数据'''
 
-    def __init__(self, num, name, value, add=0):
+    def __init__(self, num, name, value, N=0):
         self.num = num    # 序号 1.2.3
         self.name = name
         self.value = value
-        self.N = add      # 编号  10203
+        self.N = N      # 编号  10203
 
 class budget():
     '''用于给项目提供财务数据'''
 
     def __init__(self, key):    # ,a=0,b=0,c=0,d=0,e=0,f=0,g=0,h=0,i=0,j=0,k=0,l=0,m=0,n=0,o=0,p=0,q=0,r=0
-        self.key = key
+        self.key = key    # 0 表示预算
 
         # 用于存放预算科目
         self.kemus = []
