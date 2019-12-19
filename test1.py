@@ -20,16 +20,18 @@ budget.Addkemu(1, '1.14', '垃圾处理费')
 budget.fixkemu('垃圾处理费', 100)
 
 for i in budget.kemus:
-    # print(i.num, i.name, i.value, i.N)
+    print(i.num, i.name, i.value, i.N)
     pass
 
 payment = payment.payment()
 payment.New(budget)
 for i in payment.budget_P.kemus:
-    print(i.num, i.name, i.value, i.N)
+    # print(i.num, i.name, i.value, i.N)
     pass
-payment.Addpayment('垃圾处理费', 100, 20191219, '李洪翔南昌出差12.19')
-print(payment.kemu_Ps[0].name, payment.kemu_Ps[0].value, payment.kemu_Ps[0].time, payment.kemu_Ps[0].beizhu)
+payment.Addpayment('垃圾处理费', 100, 20191210, '123')
+payment.Addpayment('差旅费/会议费、国际合作与交流费', 1000, 20191219, '李洪翔南昌出差12.19')
+payment.Addpayment('间接费', 10000, 20191220, '绩效支出')
+# print(payment.kemu_Ps[0].name, payment.kemu_Ps[0].value, payment.kemu_Ps[0].time, payment.kemu_Ps[0].beizhu)
 for i in payment.budget_P.kemus:
     print(i.num, i.name, i.value, i.N)
     pass
