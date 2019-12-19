@@ -94,6 +94,9 @@ class budget():
         i = self.names.index(name)
         self.kemus[i].value = value
 
+        for i in range(3):
+            self.jisuan()
+
         # 重新统计
         self.nums = self.tongjinum()     # 序号 1.2.3
         self.names = self.tongjiname()
@@ -167,21 +170,26 @@ class budget():
         for i in range(len(self.kemus)):
             kemu = self.kemus[i]
             N = kemu.num
-            print(N)
+            # print(N)
             if N == '0':
-                print(self.kemus[i].num)
+                # print(self.kemus[i].num) 开始匹配总费用
                 N1 = nums.index('1')
                 N2 = nums.index('2')
-                self.kemus[i].value = self.kemus[N1].value + self.kemus[N2].value
+                self.kemus[i].value = self.kemus[N1].value + self.kemus[N2].value    # 0总费用等与序号1和2
             if N == '1':
-                print('开始匹配直接费用')
+                # print('开始匹配直接费用')
+                self.kemus[i].value = 0
                 for j in range(len(self.kemus)):
-                    if re.match('^1.[0-9]+', self.kemus[j].num):
-                        print(self.kemus[j].num)
+                    if re.match('^1\.[0-9]+$', self.kemus[j].num):
+                        # print(self.kemus[j].num)
                         self.kemus[i].value = self.kemus[i].value + self.kemus[j].value
-
-
-
+            if N == '1.1':
+                # print('开始匹配设备费用')
+                self.kemus[i].value = 0
+                for j in range(len(self.kemus)):
+                    if re.match('^1\.1\.[0-9]+$', self.kemus[j].num):
+                        # print(self.kemus[j].num)
+                        self.kemus[i].value = self.kemus[i].value + self.kemus[j].value
 
     '''
         self.总费用 = {'name': '总费用', 'value': a, '备注': '', 'key':key}
