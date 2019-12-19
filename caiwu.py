@@ -75,6 +75,19 @@ class budget():
             self.Ns = self.tongjiN()
             # 添加提示
 
+        elif key == 2:
+            # 修改项目
+            self.kemus.append(kemu(num, name, value))
+
+            self.kemus = self.paixu()    # 增加科目后应当排序
+
+            # 重新统计
+            self.nums = self.tongjinum()     # 序号 1.2.3
+            self.names = self.tongjiname()
+            self.values = self.tongjivalue()
+            self.Ns = self.tongjiN()
+            # 添加提示
+
         elif key == -1:
             # 删除项目
             i = self.names.index(name)

@@ -7,7 +7,7 @@ budget = caiwu.budget(1)
 budget.Addkemu(0)
 budget.Addkemu(1, '1.1.4', '垃圾处理费')
 budget.Addkemu(-1, '', '垃圾处理费')
-budget.Addkemu(1, '1.1.4', '垃圾处理费')
+budget.Addkemu(1, '1.14', '垃圾处理费')
 budget.fixkemu('垃圾处理费', 100)
 
 for i in budget.kemus:
